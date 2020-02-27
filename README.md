@@ -28,7 +28,7 @@ android {
 }
 dependencies {
     ....
-    implementation 'co.invoid.android:livenesscheck:1.0.0'
+    implementation 'co.invoid.android:livenesscheck:1.0.1'
 }
 ```
 
