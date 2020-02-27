@@ -54,7 +54,7 @@ To Obtain your organisation's authkey, contact us at hello@invoid.co
 
 ## Response returned from the SDK
 - Selfie file path ```LivenessResponse.getSelfieFilePath()```
-- Liveness response ```LivenessResponse.getSelfieFilePath()```
+- Liveness api response ```LivenessResponse.getLivenessApiResponse()```
 
 ```
 @Override
@@ -63,8 +63,9 @@ To Obtain your organisation's authkey, contact us at hello@invoid.co
         
             if(resultCode == RESULT_OK) {
                 LivenessResponse livenessResponse = data.getParcelableExtra(LivenessHelper.RESULT);
-       
-           
+                String selfiePath = livenessResponse.getSelfieFilePath();
+                LivenessApiResponse livenessApiResponse = livenessApiResponse.getLivenessApiResponse();
+                
            } else if(resultCode == LivenessHelper.AUTHORIZATION_RESULT) {
            
            int authorizationResult = data.getIntExtra(LivenessHelper.AUTHORIZATION_RESULT, -1);
