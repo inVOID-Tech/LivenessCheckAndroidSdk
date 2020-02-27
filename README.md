@@ -55,7 +55,6 @@ To Obtain your organisation's authkey, contact us at hello@invoid.co
 ## Response returned from the SDK
 - Selfie file path ```LivenessResponse.getSelfieFilePath()```
 - Liveness response ```LivenessResponse.getSelfieFilePath()```
-- Document back image file path ```photoHelperResult.getLivenessApiResponse()```
 
 ```
 @Override
