@@ -73,3 +73,13 @@ To Obtain your organisation's authkey, contact us at hello@invoid.co
         }
     }
 ```
+
+## Release Notes
+### `1.0.2`
+- minSdk version 16
+
+### `1.0.1`
+- Minor UI changes.
+
+### `1.0.0`
+- Inital release
