@@ -19,7 +19,7 @@ Add following lines in your module level ```build.gradle```
 ```
 dependencies {
     ....
-    implementation 'co.invoid.android:livenesscheck:1.0.2'
+    implementation 'co.invoid.android:livenesscheck:1.0.3'
 }
 
 ```
@@ -75,6 +75,9 @@ To Obtain your organisation's authkey, contact us at hello@invoid.co
 ```
 
 ## Release Notes
+### `1.0.3`
+- fix crash on devices running Android 8.0 (API Level 26)
+
 ### `1.0.2`
 - minSdk version 16
 
