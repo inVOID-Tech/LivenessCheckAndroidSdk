@@ -1,35 +1,27 @@
 ## Minimum Requirements
-- `minSdkVersion 21` 
+- `minSdkVersion 16` 
 - `AndroidX`
 
 ## Getting Started
 
 Add following lines in your root ```build.gradle```
 ```
-buildscript {
-
-    allprojects {
-        repositories {
-            ...
-            maven { url "https://dl.bintray.com/invoidandroid12/android/" }
-        }
+allprojects {
+    repositories {
+        ...
+        maven { url "https://dl.bintray.com/invoidandroid12/android/" }
     }
 }
+
 ```
 
 Add following lines in your module level ```build.gradle```
 ```
-android {
-    ...
-    compileOptions {
-       sourceCompatibility = 1.8
-       targetCompatibility = 1.8
-    }
-}
 dependencies {
     ....
-    implementation 'co.invoid.android:livenesscheck:1.0.1'
+    implementation 'co.invoid.android:livenesscheck:1.0.2'
 }
+
 ```
 
 This library also uses some common android libraries. So if you are not already using them then make sure you add these libraries to your module level `build.gradle`
@@ -43,7 +35,7 @@ This library also uses some common android libraries. So if you are not already 
 yourinitbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LivenessHelper.with(this@MainActivity, "YOUR_AUTH_KEY").start()
+                LivenessHelper.with(YourActivity.this, "YOUR_AUTH_KEY").start()
             }
         });
 ```
@@ -61,19 +53,20 @@ To Obtain your organisation's authkey, contact us at hello@invoid.co
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if(requestCode == LivenessHelper.LIVENESS_HELPER_REQ_CODE) {
         
-            if(resultCode == RESULT_OK) {
+            if(resultCode == Activity.RESULT_OK) {
                 LivenessResponse livenessResponse = data.getParcelableExtra(LivenessHelper.RESULT);
                 String selfiePath = livenessResponse.getSelfieFilePath();
                 LivenessApiResponse livenessApiResponse = livenessApiResponse.getLivenessApiResponse();
                 
            } else if(resultCode == LivenessHelper.AUTHORIZATION_RESULT) {
-           
-           int authorizationResult = data.getIntExtra(LivenessHelper.AUTHORIZATION_RESULT, -1);
+                int authorizationResult = data.getIntExtra(LivenessHelper.AUTHORIZATION_RESULT, -1);
                 if(authorizationResult == LivenessHelper.UNAUTHORIZED) {
                     Log.d(TAG, "onActivityResult: unauthorized");
                 } else {
                     Log.d(TAG, "onActivityResult: authorization error");
                 }
+            } else if(resultCode == Activity.RESULT_CANCELED) {
+                Log.d(TAG, "onActivityResult: cancelled by user");
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);
