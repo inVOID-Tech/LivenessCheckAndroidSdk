@@ -19,15 +19,15 @@ Add following lines in your module level ```build.gradle```
 ```
 dependencies {
     ....
-    implementation 'co.invoid.android:livenesscheck:1.0.3'
+    implementation 'co.invoid.android:livenesscheck:1.0.5rc'
 }
 
 ```
 
 This library also uses some common android libraries. So if you are not already using them then make sure you add these libraries to your module level `build.gradle`
-- `androidx.appcompat:appcompat:1.1.0`
+- `androidx.appcompat:appcompat:1.0.0`
 - `androidx.constraintlayout:constraintlayout:1.1.3`
-- `com.google.android.material:material:1.1.0`
+- `com.google.android.material:material:1.0.0`
 
 ## Initialize SDK
 
@@ -75,6 +75,14 @@ To Obtain your organisation's authkey, contact us at hello@invoid.co
 ```
 
 ## Release Notes
+### `1.0.5rc`
+- improve liveness detection
+- add selfie sanity check
+
+### `1.0.4`
+- fix camera preview getting stretched on some devices
+- add support for devices which are still using Camera1 api on API 21+
+
 ### `1.0.3`
 - fix crash on devices running Android 8.0 (API Level 26)
 
