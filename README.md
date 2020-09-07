@@ -19,7 +19,7 @@ Add following lines in your module level ```build.gradle```
 ```
 dependencies {
     ....
-    implementation 'co.invoid.android:livenesscheck:1.0.5rc'
+    implementation 'co.invoid.android:livenesscheck:1.0.5rc2'
 }
 
 ```
@@ -76,7 +76,7 @@ To Obtain your organisation's authkey, contact us at hello@invoid.co
 
 ## Release Notes
 
-### `1.0.5rc`
+### `1.0.5rc2`
 - improve liveness detection
 - add selfie sanity check
 
