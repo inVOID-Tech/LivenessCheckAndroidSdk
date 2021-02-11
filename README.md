@@ -9,7 +9,7 @@ Add following lines in your root ```build.gradle```
 allprojects {
     repositories {
         ...
-        maven { url "https://dl.bintray.com/invoidandroid12/android/" }
+        maven { url "https://gitlab.com/api/v4/projects/24251481/packages/maven" }
     }
 }
 
@@ -19,7 +19,7 @@ Add following lines in your module level ```build.gradle```
 ```
 dependencies {
     ....
-    implementation 'co.invoid.android:livenesscheck:1.0.5rc2'
+    implementation 'co.invoid.android:livenesscheck:1.0.6rc1'
 }
 
 ```
@@ -76,9 +76,14 @@ To Obtain your organisation's authkey, contact us at hello@invoid.co
 
 ## Release Notes
 
-### `1.0.5rc2`
+### `1.0.6rc1`
+- from this release our SDKs won't be released on Bintray anymore, all previous version of SDKs is still accessible from Bintray
+- remove apis which are deprecated in API 30 (Android 11)
+
+### `1.0.5`
 - improve liveness detection
 - add selfie sanity check
+- fix camera preview showing black screen on some devices and other bug fixes realted to camera1 API
 
 ### `1.0.4`
 - fix camera preview getting stretched on some devices
