@@ -19,7 +19,7 @@ Add following lines in your module level ```build.gradle```
 ```
 dependencies {
     ....
-    implementation 'co.invoid.android:livenesscheck:1.0.6rc1'
+    implementation 'co.invoid.android:livenesscheck:1.0.7rc1'
 }
 
 ```
@@ -43,6 +43,18 @@ yourinitbutton.setOnClickListener(new View.OnClickListener() {
 ## Authorization 
 To Obtain your organisation's authkey, contact us at hello@invoid.co
 
+## Localization
+SDK supports English and Hindi languages. By default SDK follows the device language settings and will show text in either Hindi or English based on the device settings.
+Alertnatively, SDK can be configured to use a particular language irrespective of device language.
+
+- To force use Hindi in SDK, initialize SDK in following way:
+```
+LivenessHelper.with(YourActivity.this, "YOUR_AUTH_KEY", LivenessHelper.LANGUAGE_HINDI).start()
+```
+- To force use English in SDK, initialize SDK in following way:
+```
+LivenessHelper.with(YourActivity.this, "YOUR_AUTH_KEY", LivenessHelper.LANGUAGE_ENGLISH).start()
+```
 
 ## Response returned from the SDK
 - Selfie file path ```LivenessResponse.getSelfieFilePath()```
@@ -76,7 +88,10 @@ To Obtain your organisation's authkey, contact us at hello@invoid.co
 
 ## Release Notes
 
-### `1.0.6rc1`
+### `1.0.7rc1`
+- add support for Hindi
+
+### `1.0.6`
 - from this release our SDKs won't be released on Bintray anymore, all previous version of SDKs is still accessible from Bintray
 - remove apis which are deprecated in API 30 (Android 11)
 
